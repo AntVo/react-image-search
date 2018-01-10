@@ -1,0 +1,31 @@
+body{
+  background-color: #555;
+}
+
+.image-search{
+  margin: 10px;
+  text-align: center;
+}
+
+.search-bar{
+  border-style: solid;
+  border: none;
+  border-radius: 25px;
+  padding: 6px 25px 6px 25px;
+  text-shadow:0 1px 1px rgba(0,0,0,0.3);
+  font: bold 12px Arial, Helvetica, Sans-serif;
+}
+
+.image-gallery{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.image-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 5px 10px 5px 10px;
+}
+

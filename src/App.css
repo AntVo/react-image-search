@@ -1,5 +1,5 @@
 body{
-  background-color: #555;
+  font: Lato, Sans-serif;
 }
 
 .image-search{
@@ -7,12 +7,14 @@ body{
   text-align: center;
 }
 
+.header{
+  text-align: center;
+}
+
 .search-bar{
   border-style: solid;
-  border: none;
-  border-radius: 25px;
+  border-color: #666;
   padding: 6px 25px 6px 25px;
-  text-shadow:0 1px 1px rgba(0,0,0,0.3);
   font: bold 12px Arial, Helvetica, Sans-serif;
 }
 
@@ -20,12 +22,29 @@ body{
   display: flex;
   flex-direction: row;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 .image-item{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 5px 10px 5px 10px;
+  margin: 1px 2px 1px 2px;
 }
 
+.image-item > a{
+  text-align: center;
+  font: Sans-serif;
+}
+
+.unsplash-attribution{
+  text-align: center;
+  font-style: bold;
+  font-size: 14px;
+}
+
+.attribution{
+  display: inline;
+  font-style: italic;
+  font-size: 12px;
+}

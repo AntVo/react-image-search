@@ -17,7 +17,7 @@ export default class App extends Component {
     this.fetchImages();
   }
   fetchImages = (query = 'food') => {
-      axios.get(`https://api.unsplash.com/search/photos/?page=1&per_page=3&query=${query}&client_id=93b081480ac377f19162046a944103e8ffefa467d6b59628ba869e47004484cb`
+      axios.get(`https://api.unsplash.com/search/photos/?page=1&per_page=4&query=${query}&client_id=93b081480ac377f19162046a944103e8ffefa467d6b59628ba869e47004484cb`
       )
       .then(data => {this.setState({ imageList: data.data.results });})
       .catch(err => {
@@ -29,6 +29,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <ImageSearch fetchImages={this.fetchImages}/>
+        <p className="unsplash-attribution">Photos from <a href="https://unsplash.com/?utm_source=your_app_name&utm_medium=referral"> Unsplash</a> </p>
         <ImageGallery imageList={this.state.imageList}/>
       </div>
     )

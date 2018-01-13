@@ -37,7 +37,7 @@ export default class App extends Component {
   }
 
   fetchImages = (query = 'food') => {
-      axios.get(`https://api.unsplash.com/search/photos/?page=${this.state.pageNumber}.&per_page=4&query=${query}&client_id=93b081480ac377f19162046a944103e8ffefa467d6b59628ba869e47004484cb`
+      axios.get(`https://api.unsplash.com/search/photos/?page=${this.state.pageNumber}.&per_page=3&query=${query}&client_id=93b081480ac377f19162046a944103e8ffefa467d6b59628ba869e47004484cb`
       )
       .then(data => {this.setState({ imageList: data.data.results });})
       .catch(err => {
@@ -49,7 +49,7 @@ export default class App extends Component {
     return (
       <div className="app">
         <ImageSearch fetchImages={this.fetchImages} pageNumber={this.state.pageNumber} changeQuery={this.changeQuery}/>
-        <p className="unsplash-attribution">Photos from <a href="https://unsplash.com/?utm_source=image-editor&utm_medium=referral"> Unsplash</a> </p>
+        <h3 className="unsplash-attribution">Photos from <a href="https://unsplash.com/?utm_source=image-editor&utm_medium=referral"> Unsplash</a> </h3>
         <PagePicker incrementPage={this.incrementPage} decrementPage={this.decrementPage}/>
         <ImageGallery imageList={this.state.imageList}/>
       </div>

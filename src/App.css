@@ -78,3 +78,7 @@ body{
 .page-picker > button:hover {
   background-color: #0585e8;
 }
+
+.image-viewer{
+  text-align: center;
+}

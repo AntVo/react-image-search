@@ -15,7 +15,7 @@ body{
   border-style: solid;
   border-color: #666;
   padding: 6px 25px 6px 25px;
-  font: bold 12px Arial, Helvetica, Sans-serif;
+  font: bold 18px Arial, Helvetica, Sans-serif;
 }
 
 .image-gallery{
@@ -30,6 +30,17 @@ body{
   flex-direction: column;
   justify-content: center;
   margin: 1px 2px 1px 2px;
+}
+
+@keyframes hover-gradient{
+  0% { opacity: 1; }
+  100% { opacity: .78; }
+}
+
+.image-item:hover{
+  animation: hover-gradient .5s;
+  cursor: pointer;
+  opacity: .78;
 }
 
 .image-item > a{
@@ -47,4 +58,23 @@ body{
   display: inline;
   font-style: italic;
   font-size: 12px;
+}
+
+.page-picker{
+  display: flex;
+  justify-content: center;
+}
+
+.page-picker > button{
+  width: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #0d5287;
+  color: white;
+  font-size: 22px;
+}
+
+.page-picker > button:hover {
+  background-color: #0585e8;
 }

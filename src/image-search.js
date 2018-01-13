@@ -4,17 +4,11 @@ export default class ImageSearch extends Component {
 
 	constructor(props){
 		super(props);
-		this.state={
-			searchInput: "",
-		}
 	}
 
 	handleChange(event) {
 		event.preventDefault();
-		this.setState({
-			searchInput: event.target.value,
-		})
-		this.props.fetchImages(this.state.searchInput);
+		this.props.changeQuery(event.target.value);
 	}
 
 
@@ -25,7 +19,7 @@ export default class ImageSearch extends Component {
 		      	<input 
 		      			className="search-bar"
 		      			type="text" 
-		      			value={this.state.searchInput}
+		      			value={this.props.query}
 		      			onChange={this.handleChange.bind(this)}
 		      			placeholder="Search for an image..."></input>
 		      </form>

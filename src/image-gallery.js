@@ -7,10 +7,12 @@ export default class ImageGallery extends Component {
 	renderImages = (imageList) => {
 		const renderedImages = imageList.map((item) => 
 			<Image image={item.urls.small} 
+				   imageRaw={item.urls.raw}
 				   photographer={item.user.name} 
 				   username={item.user.username}
 				   social={item.links.html}
-				   alt={item.description} />);
+				   alt={item.description} />
+			);
 		return renderedImages;
 	}
 
@@ -21,4 +23,5 @@ export default class ImageGallery extends Component {
 		  </div>
 		)
 	}
+
 }

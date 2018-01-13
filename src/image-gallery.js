@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Image from './image';
 import ImageViewer from './image-viewer';
-import axios from 'axios';
 
 export default class ImageGallery extends Component {
 
@@ -19,7 +18,7 @@ export default class ImageGallery extends Component {
 	}
 
 	renderImage = () => {
-		return <ImageViewer image={this.state.imageToView} />
+		return <ImageViewer image={this.state.imageToView} toggleViewMode={this.toggleViewMode} />
 	}
 
 	renderImages = (imageList) => {

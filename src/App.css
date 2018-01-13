@@ -39,7 +39,7 @@ body{
 
 .image-item:hover{
   animation: hover-gradient .5s;
-  cursor: pointer;
+  cursor: zoom-in;
   opacity: .78;
 }
 
@@ -82,3 +82,21 @@ body{
 .image-viewer{
   text-align: center;
 }
+
+.image-viewer > button{
+  width: 150px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  background-color: #0d5287;
+  color: white;
+  font-size: 18px;
+}
+
+.image-viewer > button:hover{
+  cursor: pointer;
+    background-color: #0585e8;
+
+}
+
+

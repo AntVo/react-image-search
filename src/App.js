@@ -12,7 +12,7 @@ export default class App extends Component {
     this.state={
       imageList: [],
       pageNumber: 3,
-      query: "food",
+      query: "landscape",
     }
   }
 
@@ -21,12 +21,12 @@ export default class App extends Component {
   }
 
   incrementPage = () => {
-    this.setState({ pageNumber: this.state.pageNumber+1 });
+    this.setState({ pageNumber: this.state.pageNumber+2 });
     this.fetchImages(this.state.query);
   }
 
   decrementPage = () => {
-    this.setState({ pageNumber: this.state.pageNumber-1 });
+    this.setState({ pageNumber: this.state.pageNumber-2 });
     this.fetchImages(this.state.query);
 
   }
@@ -36,7 +36,7 @@ export default class App extends Component {
     this.fetchImages(this.state.query);
   }
 
-  fetchImages = (query = 'food') => {
+  fetchImages = (query = 'landscape') => {
       axios.get(`https://api.unsplash.com/search/photos/?page=${this.state.pageNumber}.&per_page=3&query=${query}&client_id=93b081480ac377f19162046a944103e8ffefa467d6b59628ba869e47004484cb`
       )
       .then(data => {this.setState({ imageList: data.data.results });})
@@ -49,12 +49,10 @@ export default class App extends Component {
     return (
       <div className="app">
         <ImageSearch fetchImages={this.fetchImages} pageNumber={this.state.pageNumber} changeQuery={this.changeQuery}/>
-        <h3 className="unsplash-attribution">Photos from <a href="https://unsplash.com/?utm_source=image-editor&utm_medium=referral"> Unsplash</a> </h3>
+        <h2 className="unsplash-attribution">Photos from <a href="https://unsplash.com/?utm_source=image-editor&utm_medium=referral"> Unsplash</a> </h2>
         <PagePicker incrementPage={this.incrementPage} decrementPage={this.decrementPage}/>
         <ImageGallery imageList={this.state.imageList}/>
       </div>
     )
   }
-
 }
-
